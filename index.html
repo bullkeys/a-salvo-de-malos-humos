@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Salvo de Malos Humos</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #222;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+    }
+    header img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+    }
+    nav button {
+      flex: 1;
+      padding: 10px;
+      color: white;
+      background-color: #333;
+      border: none;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background-color: #555;
+    }
+    .pantalla {
+      display: none;
+      padding: 20px;
+    }
+    .activa {
+      display: block;
+    }
+    .logo-horizontal {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    .boton-sos {
+      background-color: red;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .consejo {
+      cursor: pointer;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #cde;
+      border-radius: 10px;
+    }
+    .historia {
+      white-space: pre-line;
+    }
+    .boton-comunidad {
+      display: inline-block;
+      color: #fff;
+      background-color: #222;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .boton-comunidad:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo_redondo.png" alt="Logo Redondo" />
+    <h1>A Salvo de Malos Humos</h1>
+    <p>App para ayudarte a dejar los porros</p>
+  </header>
+
+  <nav>
+    <button onclick="mostrar('bienvenida')">Inicio</button>
+    <button onclick="mostrar('historia')">Mi historia</button>
+    <button onclick="mostrar('contador')">Contador</button>
+    <button onclick="mostrar('diario')">Diario</button>
+    <button onclick="mostrar('consejos')">Consejos</button>
+    <button onclick="mostrar('sos')">SOS</button>
+    <button onclick="mostrar('comunidad')">Comunidad</button>
+  </nav>
+
+  <div class="pantalla activa" id="bienvenida">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Bienvenido a tu espacio de recuperación</h2>
+    <p>Este es tu lugar seguro para sanar, motivarte y mantenerte firme en tu decisión de vivir limpio. 💪</p>
+  </div>
+
+  <div class="pantalla" id="historia">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Mi historia</h2>
+    <div class="historia">
+Me llamo Dani, tengo 39 años, y durante 20 años fumé porros casi a diario. Dos décadas de mi vida vividas a medias, como si estuviera dentro de una niebla que no me dejaba ver con claridad.
+
+Durante mucho tiempo pensé que lo que hacía era normal. Trabajar, llegar a casa, fumarme un porro, ponerme a jugar a la consola y repetir. Nada grave, ¿no? Pero la verdad es que estaba anestesiado. No era libre. No era dueño de mis decisiones. Me estaba dejando llevar, sobreviviendo, pero sin vivir de verdad.
+
+A lo largo de los años me encerré en una rutina que parecía cómoda, pero que me estaba apagando poco a poco. Estuve 12 años casado, pero no estaba presente de verdad. Al llegar de trabajar, me sentaba, me fumaba mi porro… y me evadía. No físicamente, pero sí emocional y mentalmente. Me encerraba en un mundo ficticio donde todo parecía controlado, donde no había que enfrentarse a nada, donde no dolía… pero tampoco se sentía nada real.
+
+Me decían que saliera, que hiciera cosas distintas, que no me aislara tanto… pero no podía. No encontraba ganas ni ilusión por nada. Solo sentía algo de “paz” cuando fumaba. Una paz falsa, claro. Porque el porro era lo único que me calmaba… y al mismo tiempo lo que más me estaba robando la vida.
+
+Y cuando hablo de vida no me refiero solo al trabajo o al dinero. Hablo de mi esencia, de lo que soy, de mi alma. Esa parte de mí que estaba silenciada. Dormida.
+
+Vivía con miedo: miedo a sentir, miedo a estar sin fumar, miedo incluso a conducir por si me paraban. Pero todo eso lo disfrazaba con un porro más.
+
+Hasta que llegó un momento de crisis. Un día especialmente duro. Estaba emocionalmente por los suelos… y como siempre, me encendí un porro. Pero esa vez fue distinta. Entré en un bucle mental insoportable. Mi cabeza no paraba. Dándole vueltas a lo mismo, una y otra vez, sin salida. Me sentí atrapado, ahogado. Y ahí me di cuenta de que el porro ya no me estaba calmando: me estaba atrapando.
+
+Fue entonces cuando dije: “basta, no puedo más”. Y no fue solo una frase… fue un giro.
+
+Los primeros días fueron raros. Me sentía como si me faltara algo, como si estuviera en el aire. Pero poco a poco empecé a notar algo que hacía años que no sentía: claridad mental, energía, presencia. Volví a pensar por mí mismo. Empecé a entrenar. A moverme. A tener ganas de hacer cosas nuevas. A mirar la vida con otros ojos.
+
+Y ahí, en medio de ese despertar, descubrí algo que me impactó de lleno: Tenía una dependencia emocional enorme. Vivía aferrado a personas, a la necesidad de que alguien me completara, de sentirme validado. Pero todo eso estaba tapado por el humo. El porro no solo me calmaba: me desconectaba de lo que realmente tenía que sanar.
+
+Hoy lo veo claro. No cambiaría este despertar por nada. No volvería jamás a esa vida apagada, mecánica, en la que pensaba que era libre… pero era todo lo contrario.
+
+Porque la belleza de la vida está aquí fuera, en lo real, en lo que se toca, se siente y se vive. Incluso con miedo. Incluso con dolor. Pero de verdad.
+
+Sé que este camino no es fácil. Nadie dijo que lo fuera. Pero te prometo algo: es mucho más duro vivir dormido, atrapado en una vida que no es tuya.
+
+Y si estás leyendo esto, quiero decirte algo desde el corazón: Dejar los porros ha sido el mayor logro de mi vida. Aunque a algunos les parezca poca cosa, para mí fue un antes y un después. Fue lo que cambió mi rumbo. Lo que me devolvió el poder sobre mi vida.
+
+Este logro es el motor que me empujó a recuperar mi dignidad, mi fuerza, mi identidad. Y si yo he podido, tú también puedes.
+
+Tal vez ahora no lo creas. Tal vez pienses que no vas a conseguirlo. Yo también pensaba eso.
+
+Pero un día es suficiente. Un “basta” dicho desde dentro cambia destinos.
+
+Libérate. Respira. Vive limpio. Vive despierto.
+    </div>
+  </div>
+
+  <div class="pantalla" id="contador">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Días limpio</h2>
+    <label>Fecha de inicio: <input type="date" id="fechaInicio" /></label>
+    <p id="diasContador">Has estado limpio durante <strong>0</strong> días</p>
+  </div>
+
+  <div class="pantalla" id="diario">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Diario emocional</h2>
+    <textarea rows="10" cols="50" placeholder="Escribe lo que sientes hoy..."></textarea>
+  </div>
+
+  <div class="pantalla" id="consejos">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Consejo del día</h2>
+    <div class="consejo" onclick="nuevoConsejo()" id="zonaConsejo">Haz algo hoy que tu yo de mañana agradecerá.</div>
+  </div>
+
+  <div class="pantalla" id="sos">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Botón SOS</h2>
+    <button class="boton-sos" onclick="nuevoAudio()">🔊 Escuchar mensaje</button>
+    <audio id="sos-audio"></audio>
+    <div class="consejo" onclick="nuevoConsejo()" id="zonaConsejoSos">Respira. Todo pasará.</div>
+  </div>
+
+  <div class="pantalla" id="comunidad">
+    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
+    <h2>Comunidad</h2>
+    <p>Únete a nuestra comunidad en Telegram y comparte tu experiencia con otros que están dejando los porros:</p>
+    <a href="https://t.me/asalvodemaloshumos_comunidad" target="_blank" class="boton-comunidad">Ir a Telegram</a>
+  </div>
+
+  <script>
+    const pantallas = document.querySelectorAll('.pantalla');
+    function mostrar(id) {
+      pantallas.forEach(p => p.classList.remove('activa'));
+      document.getElementById(id).classList.add('activa');
+    }
+
+    const consejos = [
+      "Respira profundo y enfócate en lo que sí puedes controlar.",
+      "Rodéate de personas que te apoyen en este camino.",
+      "Haz ejercicio aunque no tengas ganas. El movimiento sana.",
+      "Escribe lo que sientes. Tu historia merece ser escuchada.",
+      "Cada día limpio es una victoria que nadie te puede quitar.",
+      "No estás solo. Muchos han pasado por esto y han salido adelante.",
+      "Busca pequeños logros y celébralos."
+    ];
+
+    function nuevoConsejo() {
+      const random = Math.floor(Math.random() * consejos.length);
+      document.getElementById('zonaConsejo').innerText = consejos[random];
+      document.getElementById('zonaConsejoSos').innerText = consejos[random];
+    }
+
+    const inputFecha = document.getElementById('fechaInicio');
+    const salidaContador = document.getElementById('diasContador');
+
+    inputFecha.addEventListener('change', () => {
+      const hoy = new Date();
+      const inicio = new Date(inputFecha.value);
+      const diferencia = Math.floor((hoy - inicio) / (1000 * 60 * 60 * 24));
+      salidaContador.innerHTML = `Has estado limpio durante <strong>${diferencia}</strong> días`;
+    });
+
+    // --- Audios SOS ---
+    const audios = ["sos1.mp3","sos2.mp3","sos3.mp3","sos4.mp3","sos5.mp3","sos6.mp3"];
+    function nuevoAudio() {
+      const random = Math.floor(Math.random() * audios.length);
+      const audio = document.getElementById('sos-audio');
+      audio.src = audios[random];
+      audio.play();
+    }
+  </script>
+</body>
+</html>
