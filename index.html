@@ -5,25 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A Salvo de Malos Humos</title>
   <style>
-  * { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
+  background-color: #fff; /* Fondo general blanco */
+  color: #000; /* Texto negro */
 }
 
 header {
-  background-color: #2c3e50;
-  padding: 10px;
+  background-color: #000; /* Fondo negro */
+  padding: 15px;
   text-align: center;
-  color: #fff;
+  color: #fff; /* Texto blanco en el header */
 }
 
 header img {
-  width: 60px;
-  max-width: 80px;
+  width: 70px;
   border-radius: 50%;
   margin-bottom: 10px;
 }
@@ -32,30 +33,32 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #34495e;
+  background-color: #111; /* Negro más suave */
 }
 
 nav button {
-  flex: 1 1 45%;
+  flex: 1 1 30%;
   margin: 5px;
-  padding: 8px;
-  color: #fff;
-  background-color: #34495e;
-  border: none;
-  cursor: pointer;
+  padding: 8px 12px;
   font-size: 14px;
+  color: #fff;
+  background-color: #28a745; /* Verde */
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
 nav button:hover {
-  background-color: #3d566e;
+  background-color: #218838; /* Verde más oscuro */
 }
 
 .pantalla {
   display: none;
-  padding: 15px;
-  font-size: 14px;
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco en cada apartado */
+  color: #000; /* Texto negro */
+  border-radius: 5px;
 }
 
 .activa {
@@ -64,34 +67,39 @@ nav button:hover {
 
 .logo-horizontal {
   width: 80%;
-  max-width: 300px;
+  max-width: 280px;
   margin-bottom: 15px;
 }
 
 .boton-sos {
-  background-color: #e74c3c;
-  color: white;
+  background-color: #28a745; /* Verde */
+  color: #fff;
   padding: 10px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 14px;
 }
 
 .consejo {
   cursor: pointer;
   margin-top: 15px;
   padding: 10px;
-  background-color: #ecf0f1;
-  color: #2c3e50;
-  border-radius: 10px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #28a745;
+  border-radius: 5px;
+  color: #000; /* Aseguramos texto negro */
+}
+
+.historia {
+  white-space: pre-line;
+  color: #000; /* Texto negro */
 }
 
 .boton-comunidad {
   display: inline-block;
   color: #fff;
-  background-color: #2c3e50;
-  padding: 8px 15px;
+  background-color: #28a745;
+  padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
@@ -99,14 +107,15 @@ nav button:hover {
 }
 
 .boton-comunidad:hover {
-  background-color: #3d566e;
+  background-color: #218838;
 }
 
-/* Media Query para móviles */
+/* --- Ajustes para móviles --- */
 @media (max-width: 480px) {
   nav button {
-    flex: 1 1 100%;
-    margin: 3px 0;
+    flex: 1 1 45%;
+    font-size: 12px;
+    padding: 8px;
   }
 
   .logo-horizontal {
@@ -114,23 +123,8 @@ nav button:hover {
   }
 
   .pantalla {
-    padding: 10px;
-    font-size: 13px;
-  }
-
-  .boton-sos {
-    padding: 8px;
-    font-size: 13px;
-  }
-
-  .consejo {
-    padding: 8px;
-    font-size: 13px;
-  }
-
-  .boton-comunidad {
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 15px;
+    font-size: 14px;
   }
 }
   </style>
