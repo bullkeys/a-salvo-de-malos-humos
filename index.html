@@ -266,46 +266,81 @@ Libérate. Respira. Vive limpio. Vive despierto.
   </div>
 
   <script>
-    const pantallas = document.querySelectorAll('.pantalla');
-    function mostrar(id) {
-      pantallas.forEach(p => p.classList.remove('activa'));
-      document.getElementById(id).classList.add('activa');
-    }
+     const pantallas = document.querySelectorAll('.pantalla');
+  function mostrar(id) {
+    pantallas.forEach(p => p.classList.remove('activa'));
+    document.getElementById(id).classList.add('activa');
+  }
 
-    const consejos = [
-      "Respira profundo y enfócate en lo que sí puedes controlar.",
-      "Rodéate de personas que te apoyen en este camino.",
-      "Haz ejercicio aunque no tengas ganas. El movimiento sana.",
-      "Escribe lo que sientes. Tu historia merece ser escuchada.",
-      "Cada día limpio es una victoria que nadie te puede quitar.",
-      "No estás solo. Muchos han pasado por esto y han salido adelante.",
-      "Busca pequeños logros y celébralos."
-    ];
+  const consejos = [
+    "Respira profundo y enfócate en lo que sí puedes controlar.",
+    "Rodéate de personas que te apoyen en este camino.",
+    "Haz ejercicio aunque no tengas ganas. El movimiento sana.",
+    "Escribe lo que sientes. Tu historia merece ser escuchada.",
+    "Cada día limpio es una victoria que nadie te puede quitar.",
+    "No estás solo. Muchos han pasado por esto y han salido adelante.",
+    "Busca pequeños logros y celébralos."
+  ];
 
-    function nuevoConsejo() {
-      const random = Math.floor(Math.random() * consejos.length);
-      document.getElementById('zonaConsejo').innerText = consejos[random];
-      document.getElementById('zonaConsejoSos').innerText = consejos[random];
-    }
+  function nuevoConsejo() {
+    const random = Math.floor(Math.random() * consejos.length);
+    document.getElementById('zonaConsejo').innerText = consejos[random];
+    document.getElementById('zonaConsejoSos').innerText = consejos[random];
+  }
 
-    const inputFecha = document.getElementById('fechaInicio');
-    const salidaContador = document.getElementById('diasContador');
+  // --- CONTADOR ---
+  const inputFecha = document.getElementById('fechaInicio');
+  const salidaContador = document.getElementById('diasContador');
 
-    inputFecha.addEventListener('change', () => {
-      const hoy = new Date();
-      const inicio = new Date(inputFecha.value);
+  function actualizarContador() {
+    const hoy = new Date();
+    const inicio = new Date(localStorage.getItem('fechaInicio'));
+    if (!isNaN(inicio)) {
       const diferencia = Math.floor((hoy - inicio) / (1000 * 60 * 60 * 24));
       salidaContador.innerHTML = `Has estado limpio durante <strong>${diferencia}</strong> días`;
-    });
-
-    // --- Audios SOS ---
-    const audios = ["sos1.mp3","sos2.mp3","sos3.mp3","sos4.mp3","sos5.mp3","sos6.mp3","sos7.mp3","sos8.mp3","sos9.mp3","sos10.mp3","sos11.mp3","sos12.mp3","sos13.mp3","sos14.mp3","sos15.mp3"];
-    function nuevoAudio() {
-      const random = Math.floor(Math.random() * audios.length);
-      const audio = document.getElementById('sos-audio');
-      audio.src = audios[random];
-      audio.play();
     }
+  }
+
+  // Guardar fecha al cambiar
+  inputFecha.addEventListener('change', () => {
+    localStorage.setItem('fechaInicio', inputFecha.value);
+    actualizarContador();
+  });
+
+  // Cargar fecha guardada
+  const fechaGuardada = localStorage.getItem('fechaInicio');
+  if (fechaGuardada) {
+    inputFecha.value = fechaGuardada;
+    actualizarContador();
+  }
+
+  // --- DIARIO ---
+  const diario = document.querySelector('#diario textarea');
+
+  // Guardar mientras escribe
+  diario.addEventListener('input', () => {
+    localStorage.setItem('diarioTexto', diario.value);
+  });
+
+  // Cargar texto guardado
+  const diarioGuardado = localStorage.getItem('diarioTexto');
+  if (diarioGuardado) {
+    diario.value = diarioGuardado;
+  }
+
+  // --- AUDIOS SOS ---
+  const audios = [
+    "sos1.mp3","sos2.mp3","sos3.mp3","sos4.mp3","sos5.mp3",
+    "sos6.mp3","sos7.mp3","sos8.mp3","sos9.mp3","sos10.mp3",
+    "sos11.mp3","sos12.mp3","sos13.mp3","sos14.mp3","sos15.mp3"
+  ];
+
+  function nuevoAudio() {
+    const random = Math.floor(Math.random() * audios.length);
+    const audio = document.getElementById('sos-audio');
+    audio.src = audios[random];
+    audio.play();
+  }
   </script>
 </body>
 </html>
