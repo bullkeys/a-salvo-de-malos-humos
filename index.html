@@ -351,15 +351,27 @@ mostrarEntradas();
 const audios = [
   "sos1.mp3","sos2.mp3","sos3.mp3","sos4.mp3","sos5.mp3",
   "sos6.mp3","sos7.mp3","sos8.mp3","sos9.mp3","sos10.mp3",
-  "sos11.mp3","sos12.mp3","sos13.mp3","sos14.mp3","sos15.mp3","sos16.mp3","sos17.mp3","sos18.mp3","sos19.mp3","sos20.mp3"
+  "sos11.mp3","sos12.mp3","sos13.mp3","sos14.mp3","sos15.mp3",
+  "sos16.mp3","sos17.mp3","sos18.mp3","sos19.mp3","sos20.mp3",
+  "sos21.mp3","sos22.mp3","sos24.mp3","sos25.mp3","sos26.mp3",
+  "sos27.mp3","sos28.mp3","sos29.mp3","sos30.mp3"
 ];
 
+// Índice para llevar el control del audio actual
+let indiceActual = 0;
+
+// Función para reproducir siguiente audio en orden
 function nuevoAudio() {
-  const random = Math.floor(Math.random() * audios.length);
   const audio = document.getElementById('sos-audio');
-  audio.src = audios[random];
+  audio.src = audios[indiceActual];
   audio.play();
+
+  // Avanzar al siguiente audio y reiniciar si llega al final
+  indiceActual++;
+  if (indiceActual >= audios.length) {
+    indiceActual = 0;
+  }
 }
-  </script>
+ </script>
 </body>
 </html>
