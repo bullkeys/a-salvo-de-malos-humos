@@ -1,377 +1,85 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Salvo de Malos Humos</title>
-  <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff; /* Fondo general blanco */
-  color: #000; /* Texto negro */
-}
-
-header {
-  background-color: #000; /* Fondo negro */
-  padding: 15px;
-  text-align: center;
-  color: #fff; /* Texto blanco en el header */
-}
-
-header img {
-  width: 70px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #111; /* Negro más suave */
-}
-
-nav button {
-  flex: 1 1 30%;
-  margin: 5px;
-  padding: 8px 12px;
-  font-size: 14px;
-  color: #fff;
-  background-color: #28a745; /* Verde */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-nav button:hover {
-  background-color: #218838; /* Verde más oscuro */
-}
-
-.pantalla {
-  display: none;
-  padding: 20px;
-  background-color: #fff; /* Fondo blanco en cada apartado */
-  color: #000; /* Texto negro */
-  border-radius: 5px;
-}
-
-.activa {
-  display: block;
-}
-
-.logo-horizontal {
-  width: 80%;
-  max-width: 280px;
-  margin-bottom: 15px;
-}
-
-.boton-sos {
-  background-color: #28a745; /* Verde */
-  color: #fff;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.consejo {
-  cursor: pointer;
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-left: 4px solid #28a745;
-  border-radius: 5px;
-  color: #000; /* Aseguramos texto negro */
-}
-
-.historia {
-  white-space: pre-line;
-  color: #000; /* Texto negro */
-}
-
-.boton-comunidad {
-  display: inline-block;
-  color: #fff;
-  background-color: #28a745;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
-
-.boton-comunidad:hover {
-  background-color: #218838;
-}
-
-/* --- Ajustes para móviles --- */
-@media (max-width: 480px) {
-  nav button {
-    flex: 1 1 45%;
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .logo-horizontal {
-    width: 90%;
-  }
-
-  .pantalla {
-    padding: 15px;
-    font-size: 14px;
-  }
-}
-  </style>
+    <meta charset="UTF-8">
+    <title>Cuenta Caracteres</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #0f0;
+            font-family: monospace;
+            padding: 20px;
+        }
+        pre {
+            color: #0f0;
+        }
+        input, button {
+            padding: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        #resultado {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo_redondo.png" alt="Logo Redondo" />
-    <h1>A Salvo de Malos Humos</h1>
-    <p>App para ayudarte a dejar los porros</p>
-  </header>
 
-  <nav>
-    <button onclick="mostrar('bienvenida')">Inicio</button>
-    <button onclick="mostrar('historia')">Mi historia</button>
-    <button onclick="mostrar('contador')">Contador</button>
-    <button onclick="mostrar('diario')">Diario</button>
-    <button onclick="mostrar('sos')">SOS</button>
-    <button onclick="mostrar('comunidad')">Comunidad</button>
-    <button onclick="mostrar('donar')">Donar</button>
-    <button onclick="mostrar('contacto')">Contacto Profesional</button>
-    <nav>
+<pre>
+ ██████╗ ██╗   ██╗███████╗███╗   ██╗████████╗ █████╗ 
+██╔════╝ ██║   ██║██╔════╝████╗  ██║╚══██╔══╝██╔══██╗
+██║      ██║   ██║█████╗  ██╔██╗ ██║   ██║   ███████║
+██║      ██║   ██║██╔══╝  ██║╚██╗██║   ██║   ██╔══██║
+╚██████╔╝╚██████╔╝███████╗██║ ╚████║   ██║   ██║  ██║
+ ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝
 
-  <div class="pantalla activa" id="bienvenida">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Bienvenido a tu espacio de recuperación</h2>
-    <p>Este es tu lugar seguro para sanar, motivarte y mantenerte firme en tu decisión de vivir limpio. 💪</p>
-  </div>
+ ██████╗ █████╗ ██████╗  █████╗  ██████╗████████╗███████╗██████╗ ███████╗███████╗
+██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗██╔════╝██╔════╝
+██║     ███████║██████╔╝███████║██║        ██║   █████╗  ██████╔╝█████╗  ███████╗
+██║     ██╔══██║██╔══██╗██╔══██║██║        ██║   ██╔══╝  ██╔══██╗██╔══╝  ╚════██║
+╚██████╗██║  ██║██║  ██║██║  ██║╚██████╗   ██║   ███████╗██║  ██║███████╗███████║
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝
+</pre>
 
-  <div class="pantalla" id="historia">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Mi historia</h2>
-    <div class="historia">
-Me llamo Dani, tengo 39 años, y durante 20 años fumé porros casi a diario. Dos décadas de mi vida vividas a medias, como si estuviera dentro de una niebla que no me dejaba ver con claridad.
+<p>
+<b>INTRODUCCIÓN:</b><br>
+Te presentamos cuenta caracteres, una nueva app que te ayudará a saber
+el número de caracteres de una frase y además te devolverá la frase invertida.
+</p>
 
-Durante mucho tiempo pensé que lo que hacía era normal. Trabajar, llegar a casa, fumarme un porro, ponerme a jugar a la consola y repetir. Nada grave, ¿no? Pero la verdad es que estaba anestesiado. No era libre. No era dueño de mis decisiones. Me estaba dejando llevar, sobreviviendo, pero sin vivir de verdad.
+<p>A continuación, introduce la frase que quieras ejecutar:</p>
 
-A lo largo de los años me encerré en una rutina que parecía cómoda, pero que me estaba apagando poco a poco. Estuve 12 años casado, pero no estaba presente de verdad. Al llegar de trabajar, me sentaba, me fumaba mi porro… y me evadía. No físicamente, pero sí emocional y mentalmente. Me encerraba en un mundo ficticio donde todo parecía controlado, donde no había que enfrentarse a nada, donde no dolía… pero tampoco se sentía nada real.
+<input type="text" id="frase" placeholder="Escribe una frase">
+<button onclick="calcular()">Ejecutar</button>
 
-Me decían que saliera, que hiciera cosas distintas, que no me aislara tanto… pero no podía. No encontraba ganas ni ilusión por nada. Solo sentía algo de “paz” cuando fumaba. Una paz falsa, claro. Porque el porro era lo único que me calmaba… y al mismo tiempo lo que más me estaba robando la vida.
+<div id="resultado"></div>
 
-Y cuando hablo de vida no me refiero solo al trabajo o al dinero. Hablo de mi esencia, de lo que soy, de mi alma. Esa parte de mí que estaba silenciada. Dormida.
-
-Vivía con miedo: miedo a sentir, miedo a estar sin fumar, miedo incluso a conducir por si me paraban. Pero todo eso lo disfrazaba con un porro más.
-
-Hasta que llegó un momento de crisis. Un día especialmente duro. Estaba emocionalmente por los suelos… y como siempre, me encendí un porro. Pero esa vez fue distinta. Entré en un bucle mental insoportable. Mi cabeza no paraba. Dándole vueltas a lo mismo, una y otra vez, sin salida. Me sentí atrapado, ahogado. Y ahí me di cuenta de que el porro ya no me estaba calmando: me estaba atrapando.
-
-Fue entonces cuando dije: “basta, no puedo más”. Y no fue solo una frase… fue un giro.
-
-Los primeros días fueron raros. Me sentía como si me faltara algo, como si estuviera en el aire. Pero poco a poco empecé a notar algo que hacía años que no sentía: claridad mental, energía, presencia. Volví a pensar por mí mismo. Empecé a entrenar. A moverme. A tener ganas de hacer cosas nuevas. A mirar la vida con otros ojos.
-
-Y ahí, en medio de ese despertar, descubrí algo que me impactó de lleno: Tenía una dependencia emocional enorme. Vivía aferrado a personas, a la necesidad de que alguien me completara, de sentirme validado. Pero todo eso estaba tapado por el humo. El porro no solo me calmaba: me desconectaba de lo que realmente tenía que sanar.
-
-Hoy lo veo claro. No cambiaría este despertar por nada. No volvería jamás a esa vida apagada, mecánica, en la que pensaba que era libre… pero era todo lo contrario.
-
-Porque la belleza de la vida está aquí fuera, en lo real, en lo que se toca, se siente y se vive. Incluso con miedo. Incluso con dolor. Pero de verdad.
-
-Sé que este camino no es fácil. Nadie dijo que lo fuera. Pero te prometo algo: es mucho más duro vivir dormido, atrapado en una vida que no es tuya.
-
-Y si estás leyendo esto, quiero decirte algo desde el corazón: Dejar los porros ha sido el mayor logro de mi vida. Aunque a algunos les parezca poca cosa, para mí fue un antes y un después. Fue lo que cambió mi rumbo. Lo que me devolvió el poder sobre mi vida.
-
-Este logro es el motor que me empujó a recuperar mi dignidad, mi fuerza, mi identidad. Y si yo he podido, tú también puedes.
-
-Tal vez ahora no lo creas. Tal vez pienses que no vas a conseguirlo. Yo también pensaba eso.
-
-Pero un día es suficiente. Un “basta” dicho desde dentro cambia destinos.
-
-Libérate. Respira. Vive limpio. Vive despierto.
-    </div>
-  </div>
-
-  <div class="pantalla" id="contador">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Días limpio</h2>
-    <label>Fecha de inicio: <input type="date" id="fechaInicio" /></label>
-    <p id="diasContador">Has estado limpio durante <strong>0</strong> días</p>
-  </div>
-
-  <div id="diario" class="pantalla">
-  <h2>Diario Emocional</h2>
-  <textarea id="entradaDiario" placeholder="Escribe cómo te sientes..."></textarea>
-  <button onclick="guardarEntrada()">Guardar entrada</button>
-  <h3>Mis entradas</h3>
-  <ul id="listaEntradas"></ul>
-</div>
-
-  <div class="pantalla" id="consejos">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Consejo del día</h2>
-    <div class="consejo" onclick="nuevoConsejo()" id="zonaConsejo">Haz algo hoy que tu yo de mañana agradecerá.</div>
-  </div>
-
-  <div class="pantalla" id="sos">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Botón SOS</h2>
-    <button class="boton-sos" onclick="nuevoAudio()">🔊 Escuchar mensaje</button>
-    <audio id="sos-audio"></audio>
-    <div class="consejo" onclick="nuevoConsejo()" id="zonaConsejoSos">Respira. Todo pasará.</div>
-  </div>
-
-  <div class="pantalla" id="comunidad">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Comunidad</h2>
-    <p>Únete a nuestra comunidad en Telegram y comparte tu experiencia con otros que están dejando los porros:</p>
-    <a href="https://t.me/asalvodemaloshumos_comunidad" target="_blank" class="boton-comunidad">Ir a Telegram</a>
-  </div>
-
-  <div class="pantalla" id="contacto">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Contactar con profesionales</h2>
-    <p>Si necesitas ayuda profesional, puedes contactar con los siguientes recursos:</p>
-
-  <ul>
-    <li>
-      <strong>Proyecto Hombre</strong> – Programa de ayuda contra adicciones: 
-      <a href="https://proyectohombre.es/" target="_blank">https://proyectohombre.es/</a>
-    </li>
-    <li>
-      <strong>Psicólogos profesionales</strong>:
-      <ul>
-        <li><a href="tel:+34619096479">Gabinete de Psicología Branca Francisco de Araújo – Tel: +34 619 09 64 79</a></li>
-        <li><a href="tel:+34982720016">Clínica Origen Psicología y Psiquiatría – Tel: +34 982 72 00 16</a></li>
-        <li><a href="https://www.clearly.help" target="_blank">Consulta online</a></li>
-      </ul>
-    </li>
-    <li>
-      <strong>Teléfono de ayuda en crisis:</strong> 
-      <a href="tel:024" target="_blank">024 – Teléfono de atención emocional</a>
-    </li>
-  </ul>
-
-  <p>Puedes usar estos recursos si sientes que necesitas apoyo inmediato o acompañamiento profesional.</p>
-  </div>
-
-  <div class="pantalla" id="donar">
-    <img src="logo_horizontal.png" class="logo-horizontal" alt="Logo Horizontal" />
-    <h2>Donar con Bizum</h2>
-    <p>Si quieres apoyar esta app y ayudar a que más personas dejen los porros, puedes hacer una donación mediante Bizum.</p>
-    <p><strong>Teléfono Bizum:</strong> +34 677742176</p>
-    <p>Solo tienes que abrir tu app de banco, seleccionar Bizum y enviar la cantidad que quieras a este número.</p>
-    <p>¡Gracias por tu apoyo! 💛</p>
-  </div>
-
-  <script>
-   const pantallas = document.querySelectorAll('.pantalla');
-function mostrar(id) {
-  pantallas.forEach(p => p.classList.remove('activa'));
-  document.getElementById(id).classList.add('activa');
+<script>
+function invertir(frase) {
+    return frase.split("").reverse().join("");
 }
 
-const consejos = [
-  "Respira profundo y enfócate en lo que sí puedes controlar.",
-  "Rodéate de personas que te apoyen en este camino.",
-  "Haz ejercicio aunque no tengas ganas. El movimiento sana.",
-  "Escribe lo que sientes. Tu historia merece ser escuchada.",
-  "Cada día limpio es una victoria que nadie te puede quitar.",
-  "No estás solo. Muchos han pasado por esto y han salido adelante.",
-  "Busca pequeños logros y celébralos."
-];
+function calcular() {
+    const frase = document.getElementById("frase").value;
 
-function nuevoConsejo() {
-  const random = Math.floor(Math.random() * consejos.length);
-  document.getElementById('zonaConsejo').innerText = consejos[random];
-  document.getElementById('zonaConsejoSos').innerText = consejos[random];
+    if (frase.toLowerCase() === "salir") {
+        document.getElementById("resultado").innerText =
+            "Espero hayáis pasado un buen rato!!";
+        return;
+    }
+
+    const longitud = frase.length;
+    const invertida = invertir(frase);
+
+    document.getElementById("resultado").innerText =
+`Aquí los resultados:
+
+Número total de caracteres: ${longitud}
+
+Frase invertida: ${invertida}`;
 }
+</script>
 
-// --- CONTADOR ---
-const inputFecha = document.getElementById('fechaInicio');
-const salidaContador = document.getElementById('diasContador');
-
-function actualizarContador() {
-  const hoy = new Date();
-  const inicio = new Date(localStorage.getItem('fechaInicio'));
-  if (!isNaN(inicio)) {
-    const diferencia = Math.floor((hoy - inicio) / (1000 * 60 * 60 * 24));
-    salidaContador.innerHTML = `Has estado limpio durante <strong>${diferencia}</strong> días`;
-  }
-}
-
-// Guardar fecha al cambiar
-inputFecha.addEventListener('change', () => {
-  localStorage.setItem('fechaInicio', inputFecha.value);
-  actualizarContador();
-});
-
-// Cargar fecha guardada
-const fechaGuardada = localStorage.getItem('fechaInicio');
-if (fechaGuardada) {
-  inputFecha.value = fechaGuardada;
-  actualizarContador();
-}
-
-// --- DIARIO (nuevo con historial y fecha) ---
-function guardarEntrada() {
-  const texto = document.getElementById('entradaDiario').value.trim();
-  if (texto === "") return;
-
-  const fecha = new Date().toLocaleDateString();
-  const entrada = { fecha, texto };
-
-  let entradas = JSON.parse(localStorage.getItem('diarioEntradas')) || [];
-  entradas.push(entrada);
-  localStorage.setItem('diarioEntradas', JSON.stringify(entradas));
-
-  document.getElementById('entradaDiario').value = "";
-  mostrarEntradas();
-}
-
-function mostrarEntradas() {
-  let entradas = JSON.parse(localStorage.getItem('diarioEntradas')) || [];
-  const lista = document.getElementById('listaEntradas');
-  lista.innerHTML = "";
-
-  entradas.forEach(e => {
-    const li = document.createElement('li');
-    li.innerHTML = `<strong>${e.fecha}:</strong> ${e.texto}`;
-    lista.appendChild(li);
-  });
-}
-
-// Mostrar al cargar
-mostrarEntradas();
-
-// --- AUDIOS SOS ---
-const audios = [
-  "sos1.mp3","sos2.mp3","sos3.mp3","sos4.mp3","sos5.mp3",
-  "sos6.mp3","sos7.mp3","sos8.mp3","sos9.mp3","sos10.mp3",
-  "sos11.mp3","sos12.mp3","sos13.mp3","sos14.mp3","sos15.mp3",
-  "sos16.mp3","sos17.mp3","sos18.mp3","sos19.mp3","sos20.mp3",
-  "sos21.mp3","sos22.mp3","sos24.mp3","sos25.mp3","sos26.mp3",
-  "sos27.mp3","sos28.mp3","sos29.mp3","sos30.mp3"
-];
-
-// Índice para llevar el control del audio actual
-let indiceActual = 0;
-
-// Función para reproducir siguiente audio en orden
-function nuevoAudio() {
-  const audio = document.getElementById('sos-audio');
-  audio.src = audios[indiceActual];
-  audio.play();
-
-  // Avanzar al siguiente audio y reiniciar si llega al final
-  indiceActual++;
-  if (indiceActual >= audios.length) {
-    indiceActual = 0;
-  }
-}
- </script>
 </body>
 </html>
