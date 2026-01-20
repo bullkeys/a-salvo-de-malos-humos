@@ -2,83 +2,109 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cuenta Caracteres</title>
+    <title>Calorías al instante</title>
     <style>
         body {
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #111;
-            color: #0f0;
-            font-family: monospace;
-            padding: 20px;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        .contenedor {
+            background-color: #1e1e1e;
+            padding: 25px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
         pre {
-            color: #0f0;
+            text-align: center;
+            color: #00ff99;
+            margin-bottom: 15px;
         }
-        input, button {
+
+        p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        input {
+            width: 100%;
             padding: 8px;
-            font-size: 16px;
-            margin-top: 10px;
+            margin: 6px 0;
+            border-radius: 5px;
+            border: none;
         }
-        #resultado {
-            margin-top: 20px;
-            white-space: pre-wrap;
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #00ff99;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00cc7a;
+        }
+
+        .resultado {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<pre>
- ██████╗ ██╗   ██╗███████╗███╗   ██╗████████╗ █████╗ 
-██╔════╝ ██║   ██║██╔════╝████╗  ██║╚══██╔══╝██╔══██╗
-██║      ██║   ██║█████╗  ██╔██╗ ██║   ██║   ███████║
-██║      ██║   ██║██╔══╝  ██║╚██╗██║   ██║   ██╔══██║
-╚██████╔╝╚██████╔╝███████╗██║ ╚████║   ██║   ██║  ██║
- ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝
+<div class="contenedor">
+    <pre>
+C A L O R Í A S   A L   I N S T A N T E
+=====================================
+    </pre>
 
- ██████╗ █████╗ ██████╗  █████╗  ██████╗████████╗███████╗██████╗ ███████╗███████╗
-██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗██╔════╝██╔════╝
-██║     ███████║██████╔╝███████║██║        ██║   █████╗  ██████╔╝█████╗  ███████╗
-██║     ██╔══██║██╔══██╗██╔══██║██║        ██║   ██╔══╝  ██╔══██╗██╔══╝  ╚════██║
-╚██████╗██║  ██║██║  ██║██║  ██║╚██████╗   ██║   ███████╗██║  ██║███████╗███████║
- ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝
-</pre>
+    <p>
+        Basándonos en que:<br>
+        • 1g carbohidratos = 4 calorías<br>
+        • 1g proteínas = 3 calorías<br>
+        • 1g grasas = 9 calorías
+    </p>
 
-<p>
-<b>INTRODUCCIÓN:</b><br>
-Te presentamos cuenta caracteres, una nueva app que te ayudará a saber
-el número de caracteres de una frase y además te devolverá la frase invertida.
-</p>
+    <input type="number" id="carbohidratos" placeholder="Gramos de carbohidratos">
+    <input type="number" id="proteinas" placeholder="Gramos de proteínas">
+    <input type="number" id="grasas" placeholder="Gramos de grasas">
 
-<p>A continuación, introduce la frase que quieras ejecutar:</p>
+    <button onclick="calcularCalorias()">Calcular</button>
 
-<input type="text" id="frase" placeholder="Escribe una frase">
-<button onclick="calcular()">Ejecutar</button>
-
-<div id="resultado"></div>
+    <div class="resultado" id="resultado"></div>
+</div>
 
 <script>
-function invertir(frase) {
-    return frase.split("").reverse().join("");
-}
+    function calcularCalorias() {
+        const carbohidratos = parseFloat(document.getElementById("carbohidratos").value) || 0;
+        const proteinas = parseFloat(document.getElementById("proteinas").value) || 0;
+        const grasas = parseFloat(document.getElementById("grasas").value) || 0;
 
-function calcular() {
-    const frase = document.getElementById("frase").value;
+        const calorias = (carbohidratos * 4) + (proteinas * 3) + (grasas * 9);
 
-    if (frase.toLowerCase() === "salir") {
-        document.getElementById("resultado").innerText =
-            "Espero hayáis pasado un buen rato!!";
-        return;
+        document.getElementById("resultado").textContent =
+            "TOTAL DE CALORÍAS: " + calorias.toFixed(2);
     }
-
-    const longitud = frase.length;
-    const invertida = invertir(frase);
-
-    document.getElementById("resultado").innerText =
-`Aquí los resultados:
-
-Número total de caracteres: ${longitud}
-
-Frase invertida: ${invertida}`;
-}
 </script>
 
 </body>
