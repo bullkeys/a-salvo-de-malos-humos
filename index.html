@@ -1,88 +1,73 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calorías al instante</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calorías al instante</title>
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #111;
-            color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        .contenedor {
-            background-color: #1e1e1e;
-            width: 100%;
-            max-width: 420px;
-            margin: 15px;
-            padding: 25px;
-            border-radius: 14px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.6);
-        }
+.contenedor {
+    background-color: #1e1e1e;
+    width: 100%;
+    max-width: 420px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 14px;
+}
 
-        pre {
-            text-align: center;
-            color: #00ff99;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+pre {
+    color: #00ff99;
+    text-align: center;
+    font-size: 14px;
+}
 
-        .descripcion {
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.descripcion {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
 
-        .descripcion ul {
-            padding-left: 18px;
-            margin: 10px 0;
-        }
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
 
-        .descripcion li {
-            margin-bottom: 6px;
-        }
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 15px;
+    font-size: 17px;
+    background-color: #00ff99;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
 
-        input {
-            width: 100%;
-            padding: 14px;
-            margin: 8px 0;
-            font-size: 16px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 16px;
-            margin-top: 15px;
-            font-size: 17px;
-            background-color: #00ff99;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #00cc7a;
-        }
-
-        .resultado {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    </style>
+.resultado {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+</style>
 </head>
+
 <body>
 
 <div class="contenedor">
@@ -93,44 +78,37 @@ C A L O R Í A S   A L   I N S T A N T E
 </pre>
 
 <div class="descripcion">
-    <p><strong>DESCRIPCIÓN:</strong></p>
+DESCRIPCION:<br><br>
 
-    <p>
-        Basándonos en que:
-    </p>
+Basandonos en que :<br><br>
 
-    <ul>
-        <li>Cada gramo de carbohidratos tiene <strong>4 calorías</strong></li>
-        <li>Cada gramo de proteínas tiene <strong>3 calorías</strong></li>
-        <li>Cada gramo de grasa tiene <strong>9 calorías</strong></li>
-    </ul>
+- cada gramo de carbohidratos tiene 4 calorias,<br>
+- cada gramo de proteinas tiene 3 calorias,<br>
+- cada gramo de grasa tiene 9 calorias,<br><br>
 
-    <p>
-        Te calculamos las calorías de un alimento.<br>
-        Solo tienes que introducir a continuación los gramos que te pedimos.
-    </p>
+Te calculamos las calorias de un alimento<br>
+solo tienes que introducir a continuacion los gramos que te pedimos:
 </div>
 
 <input type="number" id="carbohidratos" placeholder="Gramos de carbohidratos">
-<input type="number" id="proteinas" placeholder="Gramos de proteínas">
+<input type="number" id="proteinas" placeholder="Gramos de proteinas">
 <input type="number" id="grasas" placeholder="Gramos de grasas">
 
-<button onclick="calcularCalorias()">Calcular</button>
+<button onclick="calcular()">Calcular</button>
 
 <div class="resultado" id="resultado"></div>
 
 </div>
 
 <script>
-function calcularCalorias() {
-    const carbohidratos = parseFloat(document.getElementById("carbohidratos").value) || 0;
-    const proteinas = parseFloat(document.getElementById("proteinas").value) || 0;
-    const grasas = parseFloat(document.getElementById("grasas").value) || 0;
+function calcular() {
+    const c = parseFloat(document.getElementById("carbohidratos").value) || 0;
+    const p = parseFloat(document.getElementById("proteinas").value) || 0;
+    const g = parseFloat(document.getElementById("grasas").value) || 0;
 
-    const calorias = (carbohidratos * 4) + (proteinas * 3) + (grasas * 9);
-
+    const total = (c * 4) + (p * 3) + (g * 9);
     document.getElementById("resultado").textContent =
-        "TOTAL DE CALORÍAS: " + calorias.toFixed(2);
+        "TOTAL DE CALORIAS : " + total.toFixed(2);
 }
 </script>
 
