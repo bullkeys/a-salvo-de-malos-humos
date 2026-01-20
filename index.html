@@ -35,10 +35,19 @@
             margin-bottom: 20px;
         }
 
-        p {
+        .descripcion {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .descripcion ul {
+            padding-left: 18px;
+            margin: 10px 0;
+        }
+
+        .descripcion li {
+            margin-bottom: 6px;
         }
 
         input {
@@ -77,16 +86,30 @@
 <body>
 
 <div class="contenedor">
+
 <pre>
 C A L O R Í A S   A L   I N S T A N T E
 =====================================
 </pre>
 
-<p>
-1g carbohidratos = 4 calorías<br>
-1g proteínas = 3 calorías<br>
-1g grasas = 9 calorías
-</p>
+<div class="descripcion">
+    <p><strong>DESCRIPCIÓN:</strong></p>
+
+    <p>
+        Basándonos en que:
+    </p>
+
+    <ul>
+        <li>Cada gramo de carbohidratos tiene <strong>4 calorías</strong></li>
+        <li>Cada gramo de proteínas tiene <strong>3 calorías</strong></li>
+        <li>Cada gramo de grasa tiene <strong>9 calorías</strong></li>
+    </ul>
+
+    <p>
+        Te calculamos las calorías de un alimento.<br>
+        Solo tienes que introducir a continuación los gramos que te pedimos.
+    </p>
+</div>
 
 <input type="number" id="carbohidratos" placeholder="Gramos de carbohidratos">
 <input type="number" id="proteinas" placeholder="Gramos de proteínas">
@@ -95,6 +118,7 @@ C A L O R Í A S   A L   I N S T A N T E
 <button onclick="calcularCalorias()">Calcular</button>
 
 <div class="resultado" id="resultado"></div>
+
 </div>
 
 <script>
